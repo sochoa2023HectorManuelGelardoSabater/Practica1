@@ -2,7 +2,10 @@ package net.iessochoa.HectorManuelGelardoSabater.Practica1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import android.content.Intent
 class MainActivity : AppCompatActivity() {
     private lateinit var etNombre: EditText
     private lateinit var btAceptar: Button
@@ -12,8 +15,7 @@ class MainActivity : AppCompatActivity() {
         if (!etNombre.text.isEmpty()) {
 //Creamos el Intent hacia SaludoActivity
             val intent = Intent(this, SaludoActivity::class.java)
-//le pasamos el contenido etNombre como clave:valor(parecido a
-            un map)
+//le pasamos el contenido etNombre como clave:valor(parecido a un map)
             intent.putExtra(SaludoActivity.EXTRA_NOMBRE,
                 etNombre.text.toString())
 //iniciamos la activity SaludoActivity
